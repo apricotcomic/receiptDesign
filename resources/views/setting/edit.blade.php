@@ -30,14 +30,14 @@
                         </div>
                     @endif
 
-                    <form action="/setting/{{ $company_infomation->id }}" method="POST">
+                    <form action="/setting/{{ $company->id }}" method="POST">
                         @csrf
                         @method('PUT')
                         <div class="form-group row">
                             <label for="id" class="col-md-4 col-form-label text-md-right">{{ __('ID') }}</label>
 
                             <div class="col-md-6">
-                                <input id="id" class="input-group-text text-md-left" type="text" name="id" value="{{ old('$company_infomation->id', $admins->id) }}">
+                                <input id="id" class="input-group-text text-md-left" type="text" name="id" value="{{ old('id', $company->id) }}">
                             </div>
                         </div>
 
@@ -45,7 +45,7 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name',$company_infomation->name) }}">
+                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name',$company->name) }}">
                             </div>
                         </div>
 
@@ -53,7 +53,7 @@
                             <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="address" type="text" class="form-control" name="address" value="{{ old('address',$company_infomation->address) }}">
+                                <input id="address" type="text" class="form-control" name="address" value="{{ old('address',$company->address) }}">
                             </div>
                         </div>
 
@@ -61,7 +61,7 @@
                             <label for="tel" class="col-md-4 col-form-label text-md-right">{{ __('Tel') }}</label>
 
                             <div class="col-md-6">
-                                <input id="tel" type="text" class="form-control" name="tel" value="{{ old('tel',$company_infomation->tel) }}">
+                                <input id="tel" type="text" class="form-control" name="tel" value="{{ old('tel',$company->tel) }}">
                             </div>
                         </div>
 
@@ -69,7 +69,7 @@
                             <label for="fax" class="col-md-4 col-form-label text-md-right">{{ __('Fax') }}</label>
 
                             <div class="col-md-6">
-                                <input id="fax" type="text" class="form-control" name="fax" value="{{ old('fax',$company_infomation->fax) }}">
+                                <input id="fax" type="text" class="form-control" name="fax" value="{{ old('fax',$company->fax) }}">
                             </div>
                         </div>
 
@@ -77,7 +77,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Email') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="text" class="form-control" name="email" value="{{ old('email',$company_infomation->email) }}">
+                                <input id="email" type="text" class="form-control" name="email" value="{{ old('email',$company->email) }}">
                             </div>
                         </div>
 
