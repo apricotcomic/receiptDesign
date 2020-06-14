@@ -30,22 +30,14 @@
                         </div>
                     @endif
 
-                    <form action="/setting/{{ $admins->id }}" method="POST">
+                    <form action="/setting/{{ $company_infomation->id }}" method="POST">
                         @csrf
                         @method('PUT')
                         <div class="form-group row">
                             <label for="id" class="col-md-4 col-form-label text-md-right">{{ __('ID') }}</label>
 
                             <div class="col-md-6">
-                                <input id="id" class="input-group-text text-md-left" type="text" name="id" value="{{ old('$admins->id', $admins->id) }}">
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="admin_code" class="col-md-4 col-form-label text-md-right">{{ __('Admin Code') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="admin_code" type="text" class="form-control" name="admin_code" value="{{ old('admin_code',$admins->admin_code) }}">
+                                <input id="id" class="input-group-text text-md-left" type="text" name="id" value="{{ old('$company_infomation->id', $admins->id) }}">
                             </div>
                         </div>
 
@@ -53,31 +45,39 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name',$admins->name) }}">
+                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name',$company_infomation->name) }}">
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="role" class="col-md-4 col-form-label text-md-right">{{ __('Role') }}</label>
+                            <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="role" type="text" class="form-control" name="role" value="{{ old('role',$admins->role) }}">
+                                <input id="address" type="text" class="form-control" name="address" value="{{ old('address',$company_infomation->address) }}">
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                            <label for="tel" class="col-md-4 col-form-label text-md-right">{{ __('Tel') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password">
+                                <input id="tel" type="text" class="form-control" name="tel" value="{{ old('tel',$company_infomation->tel) }}">
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                            <label for="fax" class="col-md-4 col-form-label text-md-right">{{ __('Fax') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
+                                <input id="fax" type="text" class="form-control" name="fax" value="{{ old('fax',$company_infomation->fax) }}">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Email') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="text" class="form-control" name="email" value="{{ old('email',$company_infomation->email) }}">
                             </div>
                         </div>
 
