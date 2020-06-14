@@ -57,7 +57,7 @@ class SettingController extends Controller
     public function edit($id)
     {
         //
-        $admins = \App\company_infomation::find(1);
+        $company = \App\company_infomation::find(1);
         return view('setting.edit', compact('company'));
     }
 

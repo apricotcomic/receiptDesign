@@ -22,3 +22,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/design/menu', 'ReceiptDesignController@menu');
+
+Route::get('/setting/edit', 'SettingController@edit')->name('setting.edit');
