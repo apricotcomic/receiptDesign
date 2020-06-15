@@ -71,6 +71,18 @@ class SettingController extends Controller
     public function update(Request $request, $id)
     {
         //
+        if($request->action === 'back') {
+            return redirect()->route('receiptdesign.menu');
+        } else {
+            $company = \App\Company_infomation::find($id);
+            $company->name = $request->name;
+            $company->address = $request->address;
+            $company->tel = $request->tel;
+            $company->fax = $request->fax;
+            $company->email = $request->email;
+            $company->save();
+            return redirect()->route('receiptdesign.menu');
+        }
     }
 
     /**
