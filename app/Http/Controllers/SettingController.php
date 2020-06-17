@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SettingRequest;
 use Illuminate\Http\Request;
 
 class SettingController extends Controller
@@ -68,7 +69,7 @@ class SettingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(SettingRequest $request, $id)
     {
         //
         if($request->action === 'back') {
