@@ -25,7 +25,7 @@ class SettingRequest extends FormRequest
     {
         return [
             //
-            'name' => 'exists:company_infomation,name',
+            'name' => 'required',
             'email' => 'email:rfc,dns,spoof'
         ];
     }

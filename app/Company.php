@@ -4,10 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Company_infomation extends Model
+class Company extends Model
 {
     //
-    protected $table = 'company_infomation';
+    protected $table = 'company';
+
+    protected $connection = 'mysql_restReceipt';
 
     protected $fillable = [
         'id',
@@ -17,7 +19,6 @@ class Company_infomation extends Model
         'fax',
         'email',
         'stamp_image',
-        'receipt_image',
-        'company_id'
+        'receipt_image'
     ];
 }
