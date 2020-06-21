@@ -60,8 +60,9 @@ class SettingController extends Controller
     public function edit($id)
     {
         //
-        $company_id = Auth::user()->company_id;
-        $company = \App\Company_infomation::whereCompany_id($company_id)->first();
+        //$company_id = Auth::user()->company_id;
+        //$company = \App\Company_infomation::whereCompany_id($company_id)->first();
+        $company = \App\Company_infomation::whereCompany_id($id)->first();
 
         return view('setting.edit', compact('company'));
     }

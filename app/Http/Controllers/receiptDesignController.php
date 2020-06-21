@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use Illuminate\Support\Facades\Auth;
 
 class ReceiptDesignController extends Controller
@@ -12,7 +11,8 @@ class ReceiptDesignController extends Controller
     {
         //
         if (Auth::check()) {
-            return view('design/menu');
+            $company_id = Auth::user()->company_id;
+            return view('design/menu', compact('company_id'));
         } else {
             return view('auth/login');
         }
