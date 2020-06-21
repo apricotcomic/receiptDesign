@@ -86,7 +86,7 @@
                                 <button type="submit" class="btn btn-primary" name='action' value='edit'>
                                     {{ __('変更') }}
                                 </button>
-                                <button type="submit" class="btn btn-primary" name='action' value='back'>
+                                <button type="button" class="btn btn-primary" onclick="history.back()">
                                     {{ __('戻る') }}
                                 </button>
                             </div>
