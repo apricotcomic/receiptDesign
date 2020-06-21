@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SettingRequest;
+use Auth;
 use Illuminate\Http\Request;
+use Log;
 
 class SettingController extends Controller
 {
@@ -55,10 +57,12 @@ class SettingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($id)
     {
         //
-        $company = \App\company_infomation::find(1);
+        $company_id = Auth::user()->company_id;
+        $company = \App\Company_infomation::whereCompany_id($company_id)->first();
+
         return view('setting.edit', compact('company'));
     }
 

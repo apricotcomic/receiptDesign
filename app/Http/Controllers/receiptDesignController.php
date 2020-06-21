@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Auth;
 
 class ReceiptDesignController extends Controller
 {
@@ -10,7 +11,10 @@ class ReceiptDesignController extends Controller
     public function menu()
     {
         //
-        return view('design/menu');
+        if (Auth::check()) {
+            return view('design/menu');
+        } else {
+            return view('auth/login');
+        }
     }
-
 }
