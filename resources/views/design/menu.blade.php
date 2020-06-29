@@ -4,7 +4,8 @@
 <div class="container">
 
     メニュー<br>
-    <a href="{{ route('setting.edit', $company_id ) }}">企業情報設定</a>
+    <a href="{{ route('setting.edit', $company_id ) }}">企業情報設定</a><br>
+    <a href="{{ route('print') }}">請求書印刷<a>
     <br>
     <br>
     <a href={{ route('logout') }} onclick="event.preventDefault();

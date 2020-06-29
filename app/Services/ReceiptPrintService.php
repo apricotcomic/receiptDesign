@@ -1,25 +1,25 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Services;
 
-use App\Services\ReceiptPrintService;
 use Illuminate\Http\Request;
 use vendor\setasign\Tcpdf\Fpdi;
-use App\Providers\TcpdfServiceProvider;
-use TCPDF;
+use App\Services\TcpdfServiceProvider;
 
-class ReceiptPrintController extends Controller
+class ReceiptPrintService
 {
     //
-    public function __construct(TCPDF $pdf)
+    protected $tcpdf;
+
+    public function __construct(TcpdfService $tcpdfservice)
     {
-        $this->pdf = $pdf;
+        $this->tcpdf = $tcpdfservice;
     }
 
     public function print()
     {
-        $this->pdf->AddPage();
-        $this->pdf->SetFont("kozgopromedium", "", 10);
+        $this->tcpdf->AddPage();
+        $this->tcpdf->SetFont("kozgopromedium", "", 10);
         $html = <<< EOF
             <style>
             h1 {
@@ -39,8 +39,8 @@ class ReceiptPrintController extends Controller
             </p>
             EOF;
 
-        $this->pdf->writeHTML($html); // 表示htmlを設定
-        $this->pdf->Output('samurai.pdf', 'I');
+        $this->tcpdf->writeHTML($html); // 表示htmlを設定
+        $this->tcpdf->Output('samurai.pdf', 'I');
 
     }
 }
