@@ -3,9 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use vandor\tecnickcom\tcpdf;
+use App\Services\ReceiptPrintService;
 
-class TcpdfServiceProvider extends ServiceProvider
+class ReceiptPrintServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
@@ -15,7 +15,7 @@ class TcpdfServiceProvider extends ServiceProvider
     public function register()
     {
         //
-        $this->app->bind('tcpdf',tcpdf::class);
+        $this->app->bind('ReceiptPrintService', ReceiptPrintService::class);
     }
 
     /**
