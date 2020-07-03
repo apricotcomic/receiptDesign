@@ -25,5 +25,5 @@ Route::get('/design/menu', 'MenuController@menu')->name('menu');
 
 Route::resource('setting', 'SettingController');
 
-Route::get('/print', 'ReceiptPrintController@print')->name('print');
+Route::get('/print/{id}', 'ReceiptPrintController@print')->name('print');
 

@@ -4,26 +4,34 @@ h1 {
     color: #000000; // 文字の色
     text-align: center; // テキストを真ん中に寄せる
 }
-div{
+.address{
     font-size: 12px;
     color: #000000;
     text-align: right;
 }
-p {
+.total {
     font-size: 12px; // 文字の大きさ
+    color: #000000; // 文字の色
+    text-align: center; // テキストを左に寄せる
+}
+.totalcomment {
+    font-size: 9px; // 文字の大きさ
     color: #000000; // 文字の色
     text-align: center; // テキストを左に寄せる
 }
 </style>
 <h1>領収書</h1>
-<div>
-    〒111-2222　東京都新宿区1-1-1<br>
-    株式会社AAAA
+<div class="address">
+    〒{{ $company->zip }}　{{ $company->address }}<br>
+    {{ $company->name }}
 </div>
-<p>
-金 999,999,999 円<br>
-上記正に領収しました
-</p>
+<div class="total">
+    金 999,999,999 円
+</div>
+<div class="totalcomment">
+    上記正に領収しました
+</div>
+<br>
 <table>
     <tr>
         <th>商品</th>

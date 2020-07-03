@@ -13,6 +13,7 @@ class Company_infomation extends Model
         'id',
         'name',
         'address',
+        'zip',
         'tel',
         'fax',
         'email',

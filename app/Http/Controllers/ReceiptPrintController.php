@@ -8,9 +8,11 @@ use ReceiptPrint;
 
 class ReceiptPrintController extends Controller
 {
-       public function print()
+    public function print($id)
     {
-        ReceiptPrint::printPDF();
+        $company = \App\Company_infomation::whereCompany_id($id)->first();
+
+        ReceiptPrint::printPDF($company);
 
     }
 }
