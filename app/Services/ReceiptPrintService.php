@@ -3,7 +3,7 @@
 namespace App\Services;
 
 use TCPDF;
-use App\Company_infomation;
+use App\Company_information;
 
 class ReceiptPrintService
 {
@@ -12,7 +12,7 @@ class ReceiptPrintService
         $this->pdf = $pdf;
     }
 
-    public function printPDF(Company_infomation $company)
+    public function printPDF(Company_information $company)
     {
         $this->pdf->AddPage();
         $this->pdf->SetFont("kozgopromedium", "", 10);

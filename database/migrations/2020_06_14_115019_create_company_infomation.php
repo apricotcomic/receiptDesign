@@ -13,7 +13,7 @@ class CreateCompanyInfomation extends Migration
      */
     public function up()
     {
-        Schema::create('company_infomation', function (Blueprint $table) {
+        Schema::create('company_information', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('address')->nullable($value = true);
@@ -35,6 +35,6 @@ class CreateCompanyInfomation extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('company_infomation');
+        Schema::dropIfExists('company_information');
     }
 }

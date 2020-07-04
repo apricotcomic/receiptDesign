@@ -61,8 +61,8 @@ class SettingController extends Controller
     {
         //
         //$company_id = Auth::user()->company_id;
-        //$company = \App\Company_infomation::whereCompany_id($company_id)->first();
-        $company = \App\Company_infomation::whereCompany_id($id)->first();
+        //$company = \App\Company_information::whereCompany_id($company_id)->first();
+        $company = \App\Company_information::whereCompany_id($id)->first();
 
         return view('setting.edit', compact('company'));
     }
@@ -80,7 +80,7 @@ class SettingController extends Controller
         if($request->action === 'back') {
             return redirect()->route('receiptdesign.menu');
         } else {
-            $company = \App\Company_infomation::find($id);
+            $company = \App\Company_information::find($id);
             $company->name = $request->name;
             $company->address = $request->address;
             $company->tel = $request->tel;
