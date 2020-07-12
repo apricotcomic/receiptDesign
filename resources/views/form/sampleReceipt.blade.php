@@ -24,7 +24,7 @@ h1 {
 <div class="address">
     〒{{ $company->zip }}　{{ $company->address }}<br>
     {{ $company->name }}<br>
-    <img src="/stamps/1/teststamp.png" width="50" height="50"/>
+    <img src="{{ asset('/storage/stamps/1/teststamp.png') }}" width="50" height="50"/>
 </div>
 <div class="total">
     金 999,999,999 円

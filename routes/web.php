@@ -27,3 +27,6 @@ Route::resource('setting', 'SettingController');
 
 Route::get('/print/{id}', 'ReceiptPrintController@print')->name('print');
 
+Route::get('/upload', 'StampUploadController@input')->name('input');
+
+Route::post('/upload', 'StampUploadController@upload')->name('upload');
