@@ -24,13 +24,10 @@ class StampUploadController extends Controller
         $company = \App\Company_information::whereCompany_id($company_id)->first();
         // make company use stamp directory
         //
-        $filepath = public_path('/storage/stamps/' . Auth::user()->company_id . '/');
-        if (!\File::exists($filepath)) {
-            $result = Storage::makeDirectory($filepath);
-        }
+        $filepath = '/public/stamps/' . Auth::user()->company_id;
         $filename = $request->file('filename')->getClientOriginalName();
 
-        $request->filename->storeAs($filepath , $filename);
+        $request->file('filename')->storeAs($filepath , $filename);
 
         $company->stamp_image = $filename;
         $company->save();

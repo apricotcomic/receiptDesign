@@ -41,7 +41,7 @@
                         <div class="form-group row">
                             <label for="filename" class="col-md-4 col-form-label text-md-right">{{ __('FileName') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-8">
                                 <input id="filename" class="input-group-text text-md-left" type="file" name="filename" value="{{ old('filename', $company->stamp_image) }}">
                             </div>
                         </div>
