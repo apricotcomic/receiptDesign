@@ -5,7 +5,7 @@
 
     メニュー<br>
     <a href="{{ route('setting.edit', $company_id ) }}">企業情報設定</a><br>
-    <a href={{ route('input') }}>印影登録</a><br>
+    <a href={{ route('index') }}>印影登録</a><br>
     <a href="/receiptDesign.html">請求書デザイン</a><br>
     <a href="{{ route('print', $company_id) }}">請求書印刷<a>
     <br>

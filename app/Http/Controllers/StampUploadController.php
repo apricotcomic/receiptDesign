@@ -9,12 +9,18 @@ use Illuminate\Support\Facades\Storage;
 class StampUploadController extends Controller
 {
     //
-    public function input()
+    public function index()
     {
         $company_id = Auth::user()->company_id;
         $company = \App\Company_information::whereCompany_id($company_id)->first();
+        $path = '/public/stamps/' . $company_id;
+        $files = Storage::files($path);
+        foreach ($files as $key => $value) {
+            $stamps[$key] = basename($value);
+        }
+        unset($value);
 
-        return view('upload/upload' ,compact('company'));
+        return view('upload/upload' ,compact('company', 'stamps'));
     }
 
     //

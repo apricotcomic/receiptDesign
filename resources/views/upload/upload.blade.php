@@ -56,6 +56,38 @@
                                 </button>
                             </div>
                         </div>
+
+                        <div class="table-resopnsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>{{__('CHK')}}</th>
+                                        <th>{{__('File Name')}}</th>
+                                        <th>{{__('Image')}}</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if(isset($stamps))
+                                        @foreach ($stamps as $stamp)
+                                            <tr>
+                                                @if($company->stamp_image = $stamp)
+                                                    <td>{{Form::radio('select','', true)}}</td>
+                                                @else
+                                                    <td>{{Form::radio('select')}}</td>
+                                                @endif
+                                                <td>{{ $stamp }}</td>
+                                                <td><img src="storage/stamps/{{$company->company_id}}/{{ $stamp }}" width=50 height=50></td>
+                                                <td><button type="submit" class="btn btn-primary" name='action' value='delete'>
+                                                    {{ __('削除') }}
+                                                </button></td>
+                                            </tr>
+                                        @endforeach
+                                    @endif
+                                </tbody>
+                            </table>
+                        </div>
+
                     </form>
                 </div>
             </div>
